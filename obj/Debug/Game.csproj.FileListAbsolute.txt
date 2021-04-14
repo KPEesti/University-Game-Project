@@ -1,0 +1,11 @@
+D:\VS Projects\University Projects\Game\bin\Debug\Game.exe.config
+D:\VS Projects\University Projects\Game\bin\Debug\Game.exe
+D:\VS Projects\University Projects\Game\bin\Debug\Game.pdb
+D:\VS Projects\University Projects\Game\obj\Debug\Game.csprojAssemblyReference.cache
+D:\VS Projects\University Projects\Game\obj\Debug\Game.Properties.Resources.resources
+D:\VS Projects\University Projects\Game\obj\Debug\Game.csproj.GenerateResource.cache
+D:\VS Projects\University Projects\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+D:\VS Projects\University Projects\Game\obj\Debug\Game.exe
+D:\VS Projects\University Projects\Game\obj\Debug\Game.pdb
+D:\VS Projects\University Projects\Game\obj\Debug\Game.Form1.resources
+D:\VS Projects\University Projects\Game\obj\Debug\Game.Res.resources
