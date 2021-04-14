@@ -15,7 +15,7 @@ namespace Game
         public Form1()
         {
             DoubleBuffered = true;
-            ClientSize = new Size(600, 600);
+            ClientSize = new Size(1080, 920);
             var hero = new Hero(new Point(100, 100));
             var timer = new Timer() {Interval = 1};
 
@@ -42,14 +42,13 @@ namespace Game
                         hero.GravityBox.Area.Y -= 5;
                         break;
                     case Keys.A:
-                        hero.GravityBox.Area.X -= 5;
+                        hero.GravityBox.Area.X -= 10;
                         break;
                     case Keys.D:
-                        hero.GravityBox.Area.X += 5;
+                        hero.GravityBox.Area.X += 10;
                         break;
                 }
             };
-            InitializeComponent();
         }
     }
 }
