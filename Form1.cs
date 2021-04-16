@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace Game
@@ -16,39 +9,27 @@ namespace Game
         {
             DoubleBuffered = true;
             ClientSize = new Size(1080, 920);
-            var hero = new Hero(new Point(100, 100));
-            var timer = new Timer() {Interval = 1};
+            var player = new Player(new Point(100, 100));
+            var timer = new Timer {Interval = 1};
+
 
             timer.Tick += (sender, args) =>
             {
-                hero.GravityBox.Move();
+                player.Jump();
+
+                if (player.Collider.Top + player.Collider.Height >= Size.Height)
+                {
+                    player.Collider.Y = Size.Height - player.Collider.Height;
+                    player.Jumping = false;
+                }
+
                 Invalidate();
             };
             timer.Start();
 
-            Paint += (sender, args) =>
-            {
-                args.Graphics.FillRectangle(hero.GravityBox.Color, hero.GravityBox.Area);
-            };
+            Paint += (sender, args) => { args.Graphics.FillRectangle(Brushes.Chocolate, player.Collider); };
 
-            KeyDown += (sender, args) =>
-            {
-                switch (args.KeyData)
-                {
-                    case Keys.S:
-                        hero.GravityBox.Area.Y += 5;
-                        break;
-                    case Keys.W:
-                        hero.GravityBox.Area.Y -= 5;
-                        break;
-                    case Keys.A:
-                        hero.GravityBox.Area.X -= 10;
-                        break;
-                    case Keys.D:
-                        hero.GravityBox.Area.X += 10;
-                        break;
-                }
-            };
+            KeyDown += (sender, args) => { player.Move(args.KeyData); };
         }
     }
 }
